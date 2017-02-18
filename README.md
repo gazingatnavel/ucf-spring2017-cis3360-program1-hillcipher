@@ -55,6 +55,7 @@ If your program runs properly, but does not generate the same output as the samp
 Checking key1 file1... fail (output does not match)
 ```
 
+In addition to the three sample key and text files included with the assignment (p1TestFiles), I've also included a the sample key and file for the sample in the text of the programming assignment (Prog-1-HillCipher.pdf). That sample is found in the files 'inkey4.txt' and 'infile4.txt'.
 
 Some technical details:
 
@@ -87,7 +88,7 @@ It begins with two blank lines, then 'Key matrix:', then one blank line. This is
 
 I've attempted to make the sample output files exactly match the output provided in the p1TestOutput.pdf file. I'm not sure how closely the graders will expect the number of blank lines in your output to match those in the test output.
 
-I'm not an expert in bash shell scripting, but this script seems to work for me in the Eustis linux environment. You may have to modify it slightly to work on your home computer. (Specifically, you may need to modify line 6 'gcc hillcipher.c -o hillcipher' to match the compiler on your home computer. On a Mac, you can use 'cc hillcipher.c -o hillcipher'. Not sure if that would also work on a Windows computer, but it might.
+I'm not an expert in bash shell scripting, but this script seems to work for me in the Eustis linux environment. You may have to modify it slightly to work on your home computer. (Specifically, you may need to modify line 6 'gcc hillcipher.c -o hillcipher' to match the compiler on your home computer. On a Mac, you can use 'cc hillcipher.c -o hillcipher'. Not sure if that would also work on a Windows computer, but it might).
 
 I haven't tested the script with java, but I believe that a couple of modifications might make it work:
 
