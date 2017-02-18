@@ -13,6 +13,7 @@ Here's what it does:
 
 
 To use the shell script:
+
 1. Copy the shell script and the sample output files to a directory in Eustis.
 2. Copy the sample input files (inkey1.txt, infile1.txt, etc.) to the same directory in Eustis.
 3. Copy your hillcipher.c file to the same directory in Eustis.
