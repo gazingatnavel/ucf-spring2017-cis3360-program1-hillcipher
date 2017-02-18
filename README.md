@@ -21,6 +21,7 @@ To use the shell script:
 
 If everything works properly, you should see something like:
 
+```
 Checking key1 file1... PASS!
 Checking key1 file2... PASS!
 Checking key1 file3... PASS!
@@ -31,21 +32,28 @@ Checking key3 file1... PASS!
 Checking key3 file2... PASS!
 Checking key3 file3... PASS!
 Checking key4 file4... PASS!
+```
 
 
 If your hillcipher.c fails to compile, you'll see:
 
+```
 fail (failed to compile)
+```
 
 
 If your program compiles, but crashes during execution, you'll see:
 
+```
 Checking key1 file 1... fail (program crashed)
+```
 
 
 If your program runs properly, but does not generate the same output as the sample output file, you'll see:
 
+```
 Checking key1 file1... fail (output does not match)
+```
 
 
 Some technical details:
@@ -54,6 +62,7 @@ Some technical details:
 2. The '-B' option is used with the 'diff' command to ignore blank lines. This means that if your output has more or less blank lines than the sample output, the program will pass.
 3. For example, the sample output (output-key1-file1.txt) for inkey1.txt and infile1.txt is:
 
+```
 
 
 Key matrix:
@@ -71,6 +80,8 @@ Ciphertext:
 
 fhtbhvvpjjxdlxzrnlbfpzdtrn
 
+
+```
 
 It begins with two blank lines, then 'Key matrix:', then one blank line. This is followed by two blank lines, then 'Plaintext:', etc. If the output from your program, for example, has only one blank line before 'Key matrix:' instead of two, the test will still pass.
 
