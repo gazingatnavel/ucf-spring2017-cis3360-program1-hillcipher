@@ -1,0 +1,21 @@
+
+
+Key matrix:
+
+5 7 10
+3 9 12
+4 2 11
+
+
+Plaintext:
+
+abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzab
+cdefghijklmnopqrstuvwxyzx
+
+
+Ciphertext:
+
+bhypbxdvwrpvfjutdthxsvrrjlqxfplzoztnnnmbhlpbkdvjrpifjhtdghxfvrejldxfclzbztannzbh
+ypbxdvwrpvfjutdthxsvrrfbj
+
+

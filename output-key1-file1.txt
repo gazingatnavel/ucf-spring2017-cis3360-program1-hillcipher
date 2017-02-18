@@ -1,0 +1,18 @@
+
+
+Key matrix:
+
+2 5
+3 7
+
+
+Plaintext:
+
+abcdefghijklmnopqrstuvwxyz
+
+
+Ciphertext:
+
+fhtbhvvpjjxdlxzrnlbfpzdtrn
+
+
