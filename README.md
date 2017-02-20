@@ -16,7 +16,7 @@ To use the shell script:
 
 1. Copy the shell script and the sample output files to a directory in Eustis.
 2. Copy the sample input files (inkey1.txt, infile1.txt, etc.) to the same directory in Eustis.
-3. Copy your hillcipher.c file to the same directory in Eustis.
+3. Copy your hillcipher.c (or hillcipher.java) file to the same directory in Eustis.
 4. Make the script executable by running the command 'chmod -x run-test-cases.sh'.
 5. From within the directory where the files are located, run the command './run-test-cases.sh'.
 
@@ -57,7 +57,7 @@ If your program runs properly, but does not generate the same output as the samp
 Checking key1 file1... fail (output does not match)
 ```
 
-In addition to the three sample key and text files included with the assignment (p1TestFiles), I've also included a the sample key and file for the sample in the text of the programming assignment (Prog-1-HillCipher.pdf). That sample is found in the files 'inkey4.txt' and 'infile4.txt'. Note that, for Java, infile4.txt may be a bit tricky, depending on how you check for letters, since it contains the Unicode RIGHT SINGLE QUOTATION MARK in several places. (The Unicode RIGHT SINGLE QUOTATION MARK is the fancy curly quote, which differs from the straight quote.) Won't say more, since I don't want to go too far in helping to write code.
+In addition to the three sample key and text files included with the assignment (p1TestFiles), I've also included the key and text file for the sample found in the programming assignment (Prog-1-HillCipher.pdf). That sample is found in the files 'inkey4.txt' and 'infile4.txt'. Note that, for Java, infile4.txt may be a bit tricky, depending on how you check for letters, since it contains the Unicode RIGHT SINGLE QUOTATION MARK in several places. (The Unicode RIGHT SINGLE QUOTATION MARK is the fancy curly quote, which differs from the straight quote.) Won't say more, since I don't want to go too far in helping to write code.
 
 Some technical details:
 
