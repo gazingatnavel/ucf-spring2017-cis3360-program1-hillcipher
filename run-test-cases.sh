@@ -1,9 +1,11 @@
 #!/bin/bash
 
+# Created by Mark Ackerman.
+# Closely modeled on similar scripts provided by Dr. Sean Szumlanski for UCF Fall 2016 COP 3503.
+
 # Variable '$?' is the exit status of a command
 
 # Test for C or Java program.
-#isC=0
 
 if [ -a "hillcipher.c" ]; then
     isC=1
