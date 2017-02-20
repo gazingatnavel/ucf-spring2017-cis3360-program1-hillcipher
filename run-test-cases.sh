@@ -1,11 +1,31 @@
 #!/bin/bash
 
-# Variable '$?' is the exit status of a command.
+# Variable '$?' is the exit status of a command
 
-# Compile hillcipher.c file to hillcipher executable.
-gcc hillcipher.c -o hillcipher
+# Test for C or Java program.
+#isC=0
 
-# Check that hillcipher.c compiled.
+if [ -a "hillcipher.c" ]; then
+    isC=1
+elif [ -a "hillcipher.java" ]; then
+    isC=0
+else 
+    echo "Unable to find source file hillcipher.c or hillcipher.java"
+    exit 1
+fi
+
+# Compile source into executable.
+if [ $isC == 1 ]; then
+    # Compile hillcipher.c file to hillcipher executable.
+    echo "Compiling hillcipher.c"
+    gcc hillcipher.c -o hillcipher 2> /dev/null
+else
+    # Compile hillcipher.java file to hillcipher.class executable.
+    echo "Compiling hillcipher.java"
+    javac hillcipher.java 2> /dev/null
+fi
+
+# Check that hillcipher.c (or hillcipher.java) compiled.
 compile_val=$?
 if [[ $compile_val != 0 ]]; then
     echo "fail (failed to compile)"
@@ -30,7 +50,12 @@ do
     
     # Run the executable for the key and text file combination, placing
     # the output in a text file.
-    ./hillcipher inkey$i.txt infile$j.txt > out-key$i-file$j.txt
+    
+    if [ $isC == 1 ]; then
+        ./hillcipher inkey$i.txt infile$j.txt > out-key$i-file$j.txt 2> /dev/null
+    else
+        java hillcipher inkey$i.txt infile$j.txt > out-key$i-file$j.txt 2> /dev/null
+    fi
     
     # Check that hillcipher executed properly.
     execute_val=$?
