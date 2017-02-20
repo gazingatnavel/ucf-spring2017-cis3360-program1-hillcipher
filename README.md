@@ -3,11 +3,11 @@ bash shell script for automated testing of hillcipher program
 
 This is a bash shell script that automates testing of the hillcipher program for UCF Spring 2017 CIS 3360 program assignment 1.
 
-The shell script (run-test-cases.sh) will work for a C source code file named 'hillcipher.c'. (See below for possible modifications for java files.)
+The shell script (run-test-cases.sh) will work for a C source code file named hillcipher.c or a Java source file named hillcipher.java.
 
 Here's what it does:
 
-1. Compiles the file 'hillcipher.c' to a 'hillcipher' executable. Prints a message if 'hillcipher.c' fails to compile.
+1. For C source, compiles the file 'hillcipher.c' to a 'hillcipher' executable. Prints a message if 'hillcipher.c' fails to compile. For Java source, compiles the file 'hillcipher.java' to 'hillcipher.class'.
 2. Runs the 'hillcipher' executable for each key file (e.g., 'inkey1.txt') and text file (e.g., 'infile1.txt'), and writes the output to a file (e.g., 'out-key1-file1.txt'). Prints a message if the 'hillcipher' executable crashes.
 3. Compares the output file to the sample output file and prints either 'PASS' or 'fail (output does not match)'.
 
@@ -23,6 +23,7 @@ To use the shell script:
 If everything works properly, you should see something like:
 
 ```
+Compiling hillcipher.c (or hillcipher.java)
 Checking key1 file1... PASS!
 Checking key1 file2... PASS!
 Checking key1 file3... PASS!
@@ -36,7 +37,7 @@ Checking key4 file4... PASS!
 ```
 
 
-If your hillcipher.c fails to compile, you'll see:
+If your hillcipher source fails to compile, you'll see:
 
 ```
 fail (failed to compile)
@@ -56,7 +57,7 @@ If your program runs properly, but does not generate the same output as the samp
 Checking key1 file1... fail (output does not match)
 ```
 
-In addition to the three sample key and text files included with the assignment (p1TestFiles), I've also included a the sample key and file for the sample in the text of the programming assignment (Prog-1-HillCipher.pdf). That sample is found in the files 'inkey4.txt' and 'infile4.txt'.
+In addition to the three sample key and text files included with the assignment (p1TestFiles), I've also included a the sample key and file for the sample in the text of the programming assignment (Prog-1-HillCipher.pdf). That sample is found in the files 'inkey4.txt' and 'infile4.txt'. Note that, for Java, infile4.txt may be a bit tricky, depending on how you check for letters, since it contains the Unicode RIGHT SINGLE QUOTATION MARK in several places. (The Unicode RIGHT SINGLE QUOTATION MARK is the fancy curly quote, which differs from the straight quote.) Won't say more, since I don't want to go too far in helping to write code.
 
 Some technical details:
 
@@ -89,12 +90,6 @@ It begins with two blank lines, then 'Key matrix:', then one blank line. This is
 
 I've attempted to make the sample output files exactly match the output provided in the p1TestOutput.pdf file. I'm not sure how closely the graders will expect the number of blank lines in your output to match those in the test output.
 
-I'm not an expert in bash shell scripting, but this script seems to work for me in the Eustis linux environment. You may have to modify it slightly to work on your home computer. (Specifically, you may need to modify line 6 'gcc hillcipher.c -o hillcipher' to match the compiler on your home computer. On a Mac, you can use 'cc hillcipher.c -o hillcipher'. Not sure if that would also work on a Windows computer, but it might).
-
-I haven't tested the script with java, but I believe that a couple of modifications might make it work:
-
-1. Change line 6 to 'javac hillcipher.java'.
-2. Change line 33 to 'java hillcipher inkey$i.txt infile$j.txt > out-key$i-file$j.txt'.
-
+I'm not an expert in bash shell scripting, but this script seems to work for me in the Eustis linux environment. You may have to modify it slightly to work on your home computer. (Specifically, you may need to modify line 6 'gcc hillcipher.c -o hillcipher' to match the compiler on your home computer. On a Mac, you can use 'cc hillcipher.c -o hillcipher'. Not sure what, if any, modifications would be required to run the script on a Windows computer.)
 
 This script is closely modeled on similar testing scripts provided by Dr. Sean Szumlanski for COP 3503 Fall 2016 at UCF.
